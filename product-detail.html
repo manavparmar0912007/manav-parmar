@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details - ShopEasy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; padding: 50px 10%; }
+        .detail-card { background: white; padding: 50px; border-radius: 30px; display: flex; gap: 50px; align-items: center; max-width: 1000px; margin: auto; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .qty-container { display: flex; align-items: center; gap: 15px; margin: 25px 0; }
+        .qty-btn { background: #ff4757; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer; }
+        .btn-buy { background: #ff4757; color: white; border: none; padding: 15px 40px; border-radius: 12px; font-weight: bold; cursor: pointer; width: 100%; }
+        
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 40px; border-radius: 20px; width: 90%; max-width: 400px; position: relative; }
+        .bill-row { display: flex; justify-content: space-between; margin: 15px 0; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div class="detail-card">
+        <div style="flex: 1; text-align: center;"><img id="p-img" src="" style="max-width: 100%; border-radius: 20px;"></div>
+        <div style="flex: 1;">
+            <h1 id="p-name"></h1><p id="p-price" style="font-size: 32px; color: #ff4757; font-weight: bold; margin-top: 10px;"></p>
+            <div class="qty-container"><button class="qty-btn" onclick="changeQty(-1)">-</button><span id="qty-val" style="font-size: 20px; font-weight: bold;">1</span><button class="qty-btn" onclick="changeQty(1)">+</button></div>
+            <button class="btn-buy" onclick="showBill()">BUY NOW</button>
+        </div>
+    </div>
+    <div id="billModal" class="modal">
+        <div class="modal-content">
+            <span style="position: absolute; right: 20px; top: 10px; cursor: pointer; font-size: 24px;" onclick="closeModal()">&times;</span>
+            <h2 style="text-align: center; margin-bottom: 25px;">Final Bill</h2>
+            <div class="bill-row"><span>Item:</span> <span id="b-name"></span></div>
+            <div class="bill-row"><span>Qty:</span> <span id="b-qty"></span></div>
+            <div class="bill-row"><span>Tax (18%):</span> <span id="b-tax"></span></div>
+            <div class="bill-row" style="font-weight: bold; font-size: 20px; color: #2ed573;"><span>Total:</span> <span id="b-total"></span></div>
+            <button class="btn-buy" style="background: #2ed573; margin-top: 20px;" onclick="alert('Order Placed!')">CONFIRM ORDER</button>
+        </div>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        let qty = 1;
+        const price = parseFloat(params.get('price'));
+        document.getElementById('p-name').innerText = params.get('name');
+        document.getElementById('p-price').innerText = "$" + price;
+        document.getElementById('p-img').src = params.get('img');
+        function changeQty(v) { qty += v; if(qty < 1) qty = 1; document.getElementById('qty-val').innerText = qty; }
+        function showBill() {
+            document.getElementById('b-name').innerText = params.get('name');
+            document.getElementById('b-qty').innerText = qty;
+            const tax = (price * qty) * 0.18;
+            document.getElementById('b-tax').innerText = "$" + tax.toFixed(2);
+            document.getElementById('b-total').innerText = "$" + ((price * qty) + tax).toFixed(2);
+            document.getElementById('billModal').style.display = "flex";
+        }
+        function closeModal() { document.getElementById('billModal').style.display = "none"; }
+    </script>
+</body>
+</html>

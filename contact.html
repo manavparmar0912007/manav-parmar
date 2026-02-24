@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ShopEasy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ShopEasy</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html" class="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="section-title">Contact Us</h1>
+        <div class="contact-wrapper">
+            <div class="contact-info-card">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +91 9510403412, +91 6352018347</p>
+                <p><i class="fas fa-envelope"></i> manavparmar0912007@gmail.com</p>
+                <p><i class="fas fa-envelope"></i> vedgoswami256@gmail.com</p>
+            </div>
+            <div class="contact-form-card">
+                <form onsubmit="alert('Message Sent!'); return false;">
+                    <input type="text" placeholder="Name" required style="width:100%; padding:10px; margin-bottom:10px;">
+                    <textarea placeholder="Message" rows="5" required style="width:100%; padding:10px; margin-bottom:10px;"></textarea>
+                    <button class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
