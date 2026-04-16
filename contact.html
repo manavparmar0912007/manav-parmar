@@ -3,186 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - MY WEBSITE</title>
+    <title>Contact Us - ShopEasy</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-
-        /* VANTA BACKGROUND */
-        #vanta-canvas {
-            position: fixed;
-            width: 100%;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        body { color: #fff; overflow-x: hidden; background-color: #000; }
-
-        /* Navbar (Same as Homepage) */
-        .navbar {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            padding: 25px 0;
-            text-align: center;
-            position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .logo { font-size: 34px; font-weight: 800; color: #ff4757; letter-spacing: 4px; }
-        .nav-links { list-style: none; display: flex; justify-content: center; gap: 40px; margin-top: 15px; }
-        .nav-links a { text-decoration: none; color: #fff; font-weight: 600; font-size: 13px; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: #ff4757; }
-
-        /* Contact Container */
-        .container { padding: 80px 10%; max-width: 1200px; margin: auto; min-height: 80vh; }
-        .section-title { font-size: 42px; text-align: center; font-weight: 800; margin-bottom: 60px; color: #fff; }
-
-        .contact-wrapper { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 40px; 
-            align-items: start;
-        }
-
-        /* Glass Cards */
-        .contact-info-card, .contact-form-card {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(15px);
-            padding: 40px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.4s;
-        }
-
-        .contact-info-card:hover, .contact-form-card:hover {
-            border-color: #ff4757;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        h3 { color: #ff4757; font-size: 24px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
-        
-        .contact-info-card p { 
-            font-size: 16px; 
-            margin-bottom: 20px; 
-            display: flex; 
-            align-items: center; 
-            gap: 15px; 
-            color: #cbd5e1;
-        }
-        .contact-info-card i { color: #ff4757; font-size: 20px; }
-
-        /* Form Inputs */
-        input, textarea {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 12px;
-            color: #fff;
-            margin-bottom: 20px;
-            outline: none;
-            transition: 0.3s;
-        }
-        input:focus, textarea:focus { border-color: #ff4757; background: rgba(255, 255, 255, 0.1); }
-
-        .btn {
-            background: #ff4757;
-            color: #fff;
-            border: none;
-            padding: 15px 35px;
-            border-radius: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            width: 100%;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 71, 87, 0.3); }
-
-        .footer { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(20px); padding: 100px 10% 40px; margin-top: 100px; }
-        .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; }
-        .footer-box h3 { color: #ff4757; margin-bottom: 30px; font-size: 18px; text-transform: uppercase; }
-        .footer-box p, .footer-box a { color: #cbd5e1; text-decoration: none; font-size: 14px; margin-bottom: 12px; display: block; }
-        .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px; padding-top: 30px; color: #64748b; font-size: 13px; width: 100%; }
-    </style>
 </head>
 <body>
-
-    <div id="vanta-canvas"></div>
-
     <nav class="navbar">
-        <div class="logo">MY WEBSITE</div>
+        <div class="logo">ShopEasy</div>
         <ul class="nav-links">
             <li><a href="home.html">Home</a></li>
-            <li><a href="home.html#products">Collection</a></li>
-            <li><a href="contact.html" style="color: #ff4757;">Contact Us</a></li>
-            <li><a href="index.html">Logout</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html" class="logout-btn">Logout</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <h1 class="section-title">Contact Us</h1>
-        
         <div class="contact-wrapper">
             <div class="contact-info-card">
-                <h3>Contact Details</h3>
+                <h3>Contact Info</h3>
                 <p><i class="fas fa-phone"></i> +91 9510403412</p>
                 <p><i class="fas fa-envelope"></i> manavparmar0912007@gmail.com</p>
-                <p><i class="fas fa-location-dot"></i> Gujarat, India</p>
-                
-                <div style="margin-top: 40px;">
-                    <h3 style="font-size: 16px;">Social Connect</h3>
-                    <div style="display: flex; gap: 15px;">
-                        <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
             </div>
-
             <div class="contact-form-card">
-                <h3>Send Message</h3>
-                <form onsubmit="alert('Message Sent Successfully!'); return false;">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email Address" required>
-                    <textarea placeholder="How can we help you?" rows="5" required></textarea>
+                <form onsubmit="alert('Message Sent!'); return false;">
+                    <input type="text" placeholder="Name" required style="width:100%; padding:10px; margin-bottom:10px;">
+                    <textarea placeholder="Message" rows="5" required style="width:100%; padding:10px; margin-bottom:10px;"></textarea>
                     <button class="btn">Send Message</button>
                 </form>
             </div>
         </div>
     </div>
-
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-box"><h3>Navigation</h3><a href="home.html">Home</a><a href="#products">Products</a><a href="contact.html">Contact Us</a></div>
-            <div class="footer-box"><h3>Expert Support</h3><p>manavparmar0912007@gmail.com</p><p>+91 9510403412</p></div>
-        </div>
-        <div class="footer-bottom"><p>MY WEBSITE (C) 2026 — ALL RIGHTS RESERVED</p></div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
-
-    <script>
-        VANTA.BIRDS({
-            el: "#vanta-canvas",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            backgroundColor: 0x070b14,
-            color1: 0xff4757,
-            color2: 0x1e293b,
-            birdSize: 1.50,
-            quantity: 3.00
-        })
-    </script>
 </body>
 </html>
