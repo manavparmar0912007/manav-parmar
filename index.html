@@ -50,5 +50,77 @@
             window.location.href = "home.html";
         };
     </script>
+     <div id="vanta-canvas"></div>
+
+    <div class="top-bar">
+        <div><i class="fas fa-phone"></i> +9510403412</div>
+        <div><i class="fas fa-envelope"></i> manavparmar0912007@gmail.com</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">SHOPEASY</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#products">Collection</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html" style="color: #ff4757;">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="products">
+        <h2 style="font-size: 42px; margin-bottom: 60px; text-align: center; font-weight: 800;"></h2>
+        <div class="product-grid" id="p-grid"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box"><h3>Navigation</h3><a href="home.html">Home</a><a href="#products">Products</a><a href="contact.html">Contact Us</a></div>
+            <div class="footer-box"><h3>Expert Support</h3><p>manavparmar0912007@gmail.com</p><p>+91 9510403412</p></div>
+            <div class="footer-box"><h3>Follow Us</h3>
+                <a href="https://www.instagram.com/manav_prajapati_70" target="_blank" class="insta-btn"><i class="fab fa-instagram"></i> Manav</a>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>SHOPEASYGROUP (C) 2026 — ALL RIGHTS RESERVED</p></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+
+    <script>
+        // Initialize Vanta Birds Effect
+        VANTA.BIRDS({
+          el: "#vanta-canvas",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          backgroundColor: 0x070b14, // Deep dark background
+          color1: 0xff4757, // Red birds
+          color2: 0x1e293b,
+          birdSize: 1.50,
+          wingSpan: 20.00,
+          separation: 50.00,
+          alignment: 20.00,
+          cohesion: 20.00,
+          quantity: 3.00
+        })
+
+        // Product Loading
+        const prods = [
+            ['Watch Ultra', 799, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=500'],
+            ['Sony XM5', 350, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=500'],
+            ['iPhone 15 Pro', 999, 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=500'],
+            ['MacBook M3', 1999, 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=500'],
+            ['iPad Pro M2', 1099, 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=500'],
+            ['Fuji Camera', 1699, 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=500']
+        ];
+        const grid = document.getElementById('p-grid');
+        prods.forEach(p => {
+            grid.innerHTML += `<div class="product-card" onclick="location.href='product-detail.html?name=${encodeURIComponent(p[0])}&price=${p[1]}&img=${encodeURIComponent(p[2])}'"><div class="img-wrapper"><img src="${p[2]}"></div><h3>${p[0]}</h3><p>$${p[1]}</p></div>`;
+        });
+    </script>
 </body>
 </html>
